@@ -45,3 +45,11 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Netbeans
+*nbactions.xml
+*nb-configuration.xml
+
+# Maven
+*/target/
+release/
