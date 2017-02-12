@@ -2,6 +2,7 @@ package us.waybright.legaltasktrackerfx.domain;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,8 +19,20 @@ public class Account extends BaseEntity {
     private Date dateLastUpdated;    
     private String accountType;
     private boolean active;
+    private Client client;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    public Account() { }
+    
+    public Account(Client client, int accountNumber, String accountType, boolean active) {
+        this.client = client;
+        this.accountNumber = accountNumber;
+        this.dateCreated = new Date();
+        this.dateLastUpdated = new Date();
+        this.accountType = accountType;
+        this.active = active;
+    }
+    
+    
     public int getAccountNumber() {
         return accountNumber;
     }
@@ -37,6 +50,7 @@ public class Account extends BaseEntity {
         this.dateCreated = dateCreated;
     }
 
+    @Temporal(TemporalType.TIMESTAMP)
     public Date getDateLastUpdated() {
         return dateLastUpdated;
     }
@@ -59,5 +73,14 @@ public class Account extends BaseEntity {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    @ManyToOne
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }

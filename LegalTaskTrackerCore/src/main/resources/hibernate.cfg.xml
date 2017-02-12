@@ -22,5 +22,6 @@
     <property name="hibernate.id.new_generator_mappings">true</property>
     <!-- Mappings -->
     <mapping class="us.waybright.legaltasktrackerfx.domain.Client" />
+    <mapping class="us.waybright.legaltasktrackerfx.domain.Account" />
   </session-factory>
 </hibernate-configuration>

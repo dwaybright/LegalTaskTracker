@@ -23,7 +23,6 @@ public class PayRate extends BaseEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-
     
     public BigDecimal getBaseCost() {
         return baseCost;
