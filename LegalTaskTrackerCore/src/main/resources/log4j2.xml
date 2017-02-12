@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" name="LegalTaskTracker" packages="">
+    <Appenders>
+        <File name="LogFile" fileName="logs/app.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <Async name="Async">
+            <AppenderRef ref="LogFile"/>
+        </Async>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Async"/>
+        </Root>
+    </Loggers>
+</Configuration>
