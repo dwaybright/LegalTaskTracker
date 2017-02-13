@@ -11,7 +11,9 @@ import javafx.scene.control.Label;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import us.waybright.legaltasktrackerfx.domain.Account;
 import us.waybright.legaltasktrackerfx.domain.Client;
+import us.waybright.legaltasktrackerfx.domain.types.PayRateType;
 import us.waybright.legaltasktrackerfx.services.HibernateHelper;
 
 /**
@@ -29,21 +31,16 @@ public class FXMLController implements Initializable {
         LOG.info("You clicked me!");
         label.setText("Hello World!");
         
-        Client client = new Client();
-        client.setDateCreated(new Date());
-        client.setDateLastUpdated(new Date());
-        client.setClientNumber(1);
-        client.setDisplayName("Some O. Guy");
-        client.setActive(true);
-        client.setFirstName("Some");
-        client.setMiddleName("Other");
-        client.setLastName("Guy");
+        Client client = new Client("Some Guy", 1, true, "Some", "Other", "Guy");
+        Account account = new Account(client, 5, PayRateType.FLAT_RATE.name(), true);
+        //client.getAccounts().add(account);
         
         Task<Long> task = new Task<Long>() {
             @Override
             protected Long call() throws Exception {
                 try (Session session = HibernateHelper.openSession()) {
                     session.beginTransaction();
+                    session.saveOrUpdate(account);
                     session.saveOrUpdate(client);
                     session.getTransaction().commit();
                     session.flush();

@@ -1,7 +1,9 @@
 package us.waybright.legaltasktrackerfx.domain;
 
 import java.util.Date;
+import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -12,17 +14,33 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "client")
-public class Client extends BaseEntity {    
-    private Date dateCreated;
-    private Date dateLastUpdated;
+public class Client extends BaseEntity { 
     private String displayName;
     private int clientNumber;
     private boolean active;
+    private Date dateCreated;    
+    private Date dateLastUpdated;
     private String firstName;
     private String middleName;
-    private String lastName;
-
-    @Temporal(TemporalType.TIMESTAMP)    
+    private String lastName;    
+    private Set<Account> accounts;
+    
+    
+    public Client() { }
+    
+    public Client(String displayName, int clientNumber, boolean active, String first, String middle, String last) {
+        this.displayName = displayName;
+        this.clientNumber = clientNumber;
+        this.active = active;
+        this.dateCreated = new Date();
+        this.dateLastUpdated = new Date();
+        this.firstName = first;
+        this.middleName = middle;
+        this.lastName = last;
+    }
+    
+    
+    @Temporal(TemporalType.TIMESTAMP)
     public Date getDateCreated() {
         return dateCreated;
     }
@@ -30,8 +48,8 @@ public class Client extends BaseEntity {
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
-
-    @Temporal(TemporalType.TIMESTAMP)  
+    
+    @Temporal(TemporalType.TIMESTAMP)
     public Date getDateLastUpdated() {
         return dateLastUpdated;
     }
@@ -86,5 +104,14 @@ public class Client extends BaseEntity {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    
+    @OneToMany(mappedBy = "client")
+    public Set<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Set<Account> accounts) {
+        this.accounts = accounts;
     }
 }
