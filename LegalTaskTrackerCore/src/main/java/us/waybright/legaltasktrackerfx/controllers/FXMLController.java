@@ -32,7 +32,7 @@ public class FXMLController implements Initializable {
         label.setText("Hello World!");
         
         Client client = new Client("Some Guy", 1, true, "Some", "Other", "Guy");
-        Account account = new Account(client, 5, PayRateType.FIXED.name(), true);
+        Account account = new Account(client, 5, PayRateType.FLAT_RATE.name(), true);
         //client.getAccounts().add(account);
         
         Task<Long> task = new Task<Long>() {
