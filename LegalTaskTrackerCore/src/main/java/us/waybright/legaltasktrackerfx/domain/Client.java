@@ -18,11 +18,11 @@ public class Client extends BaseEntity {
     private String displayName;
     private int clientNumber;
     private boolean active;
-    private Date dateCreated;    
+    private Date dateCreated;
     private Date dateLastUpdated;
     private String firstName;
     private String middleName;
-    private String lastName;    
+    private String lastName;
     private Set<Account> accounts;
     
     
@@ -39,12 +39,17 @@ public class Client extends BaseEntity {
         this.lastName = last;
     }
     
+    @Override
+    public String toString() {
+        return this.displayName;
+    }
+    
     
     @Temporal(TemporalType.TIMESTAMP)
     public Date getDateCreated() {
         return dateCreated;
     }
-
+    
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }

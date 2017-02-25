@@ -51,5 +51,8 @@ Temporary Items
 *nb-configuration.xml
 
 # Maven
-*/target/
+target/
 release/
+
+LegalTaskTrackerCore/data
+LegalTaskTrackerCore/logs
