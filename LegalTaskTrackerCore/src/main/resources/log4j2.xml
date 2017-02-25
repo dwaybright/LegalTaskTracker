@@ -9,7 +9,7 @@
         </Async>
     </Appenders>
     <Loggers>
-        <Root level="trace">
+        <Root level="info">
             <AppenderRef ref="Async"/>
         </Root>
     </Loggers>

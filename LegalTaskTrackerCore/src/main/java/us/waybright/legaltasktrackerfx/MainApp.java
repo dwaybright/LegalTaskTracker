@@ -1,12 +1,12 @@
 package us.waybright.legaltasktrackerfx;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import us.waybright.legaltasktrackerfx.services.HibernateHelper;
+import us.waybright.legaltasktrackerfx.controllers.manage.StageManager;
+import us.waybright.legaltasktrackerfx.util.HibernateHelper;
 
 /**
  *
@@ -15,15 +15,12 @@ import us.waybright.legaltasktrackerfx.services.HibernateHelper;
 public class MainApp extends Application {
     
     @Override
-    public void start(Stage stage) throws Exception {        
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
+    public void start(Stage stage) throws Exception {
+        HibernateHelper.init();
         
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add("/styles/Styles.css");
-        
-        stage.setTitle("JavaFX and Maven");
-        stage.setScene(scene);
-        stage.show();
+        Injector injector = Guice.createInjector(new LegalTaskTrackerModule());
+        StageManager stageManager = injector.getInstance(StageManager.class);
+        stageManager.initStage(stage);
     }
     
     @Override
@@ -42,5 +39,4 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }
