@@ -53,3 +53,6 @@ Temporary Items
 # Maven
 target/
 release/
+
+LegalTaskTrackerCore/data
+LegalTaskTrackerCore/logs
