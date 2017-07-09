@@ -1,8 +1,8 @@
 package us.waybright.legaltasktrackerfx;
 
 import com.google.inject.AbstractModule;
-import us.waybright.legaltasktrackerfx.controllers.manage.StageManager;
-import us.waybright.legaltasktrackerfx.controllers.manage.StageManagerImpl;
+import us.waybright.legaltasktrackerfx.gui.StageManager;
+import us.waybright.legaltasktrackerfx.gui.StageManagerImpl;
 import us.waybright.legaltasktrackerfx.util.AppProperties;
 import us.waybright.legaltasktrackerfx.util.AppPropertiesImpl;
 

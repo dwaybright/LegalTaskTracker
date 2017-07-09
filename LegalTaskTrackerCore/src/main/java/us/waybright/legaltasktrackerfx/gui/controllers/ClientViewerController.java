@@ -1,4 +1,4 @@
-package us.waybright.legaltasktrackerfx.controllers;
+package us.waybright.legaltasktrackerfx.gui.controllers;
 
 import com.google.inject.Inject;
 import java.net.URL;
@@ -21,7 +21,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import us.waybright.legaltasktrackerfx.controllers.manage.StageManager;
+import us.waybright.legaltasktrackerfx.gui.StageManager;
 import us.waybright.legaltasktrackerfx.domain.Client;
 import us.waybright.legaltasktrackerfx.util.HibernateHelper;
 
@@ -31,7 +31,7 @@ import us.waybright.legaltasktrackerfx.util.HibernateHelper;
  * @author Daniel Waybright
  */
 public class ClientViewerController implements Initializable {
-    private final Logger LOG = LoggerFactory.getLogger(ClientViewerController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(ClientViewerController.class);
     private StageManager stageManager;
     
     // Display Client

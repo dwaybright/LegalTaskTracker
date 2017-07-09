@@ -1,4 +1,4 @@
-package us.waybright.legaltasktrackerfx.domain.types;
+package us.waybright.legaltasktrackerfx.domain.enums;
 
 /**
  *

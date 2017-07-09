@@ -1,5 +1,7 @@
-package us.waybright.legaltasktrackerfx.controllers.manage;
+package us.waybright.legaltasktrackerfx.gui;
 
+import us.waybright.legaltasktrackerfx.gui.enums.StyleDescriptor;
+import us.waybright.legaltasktrackerfx.gui.enums.NodeDescriptor;
 import com.google.inject.Inject;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +26,7 @@ public final class StageManagerImpl implements StageManager {
     public void initStage(final Stage stage) throws IOException {
         this.stage = stage;
         this.stage.setTitle(WINDOW_TITLE + properties.getVersion());        
-        setScene(NodeDescriptor.CLIENT_LIST, StyleDescriptor.MAIN);
+        setScene(NodeDescriptor.MAIN_WINDOW, StyleDescriptor.MAIN);
         this.stage.show();
     }
     

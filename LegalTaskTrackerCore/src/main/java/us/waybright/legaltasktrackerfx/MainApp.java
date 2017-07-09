@@ -5,7 +5,7 @@ import com.google.inject.Injector;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.stage.Stage;
-import us.waybright.legaltasktrackerfx.controllers.manage.StageManager;
+import us.waybright.legaltasktrackerfx.gui.StageManager;
 import us.waybright.legaltasktrackerfx.util.HibernateHelper;
 
 /**

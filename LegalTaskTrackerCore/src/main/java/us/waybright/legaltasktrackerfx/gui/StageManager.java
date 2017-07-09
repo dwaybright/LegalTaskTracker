@@ -1,5 +1,7 @@
-package us.waybright.legaltasktrackerfx.controllers.manage;
+package us.waybright.legaltasktrackerfx.gui;
 
+import us.waybright.legaltasktrackerfx.gui.enums.StyleDescriptor;
+import us.waybright.legaltasktrackerfx.gui.enums.NodeDescriptor;
 import java.io.IOException;
 import javafx.stage.Stage;
 

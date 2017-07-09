@@ -1,15 +1,15 @@
-package us.waybright.legaltasktrackerfx.controllers.manage;
+package us.waybright.legaltasktrackerfx.gui.enums;
 
 /**
  *
  * @author Daniel Waybright
  */
-public enum NodeDescriptor {
-    CLIENT_LIST("/fxml/ClientViewer.fxml");
+public enum StyleDescriptor {
+    MAIN("/styles/Styles.css");
     
     private final String resourcePath;
     
-    NodeDescriptor(String resourcePath) {
+    StyleDescriptor(String resourcePath) {
         this.resourcePath = resourcePath;
     }
     
